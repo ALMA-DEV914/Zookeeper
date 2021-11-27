@@ -1,11 +1,14 @@
+//call the file system functions to write the file
 const fs = require('fs');
-
+// call the functions to be executed and the file path
 const { filterByQuery, findById, createNewAnimal, validateAnimal } = require('../lib/animals.js');
 const { animals } = require('../data/animals');
+// call the mock functions to prevent writing on the file
 jest.mock('fs');
+// write the test to create the object of new animal
 test('creates an animal object', () => {
   const animal = createNewAnimal({ name: 'Darlene', id: 'jhgdja3ng2' }, animals);
-
+// expected value to be return 
   expect(animal.name).toBe('Darlene');
   expect(animal.id).toBe('jhgdja3ng2');
 });
