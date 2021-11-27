@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const {
   filterByQuery,
   findById,
@@ -7,6 +8,7 @@ const {
 } = require('../lib/zookeepers.js');
 
 jest.mock('fs');
+
 test('creates an zookeeper object', () => {
   const zookeeper = createNewZookeeper({ name: 'Darlene', id: 'jhgdja3ng2' }, []);
 
